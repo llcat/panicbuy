@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  	<!-- 一些全局配置，会改变mybatis的工作状态 -->
+  	<settings>
+  	 	<!-- 允许 JDBC 支持自动生成主键(如设置为AUTO_INCREMENT的列
+  	 	，需要驱动兼容。如果设置为 true 则这个设置强制使用自动生成主键，
+  	 	尽管一些驱动不能兼容但仍可正常工作 -->
+  		<setting name="useGeneratedKeys" value="true"/>
+  		<!-- 使用列别名替换列名
+  		如select name as alais_name from xxx
+  		使实体类中的对应的属性不和列名相同也能正常工作 
+  		默认状态就是true,这里是显示申明出来-->
+  		<setting name="useColumnLabel" value="true"/>
+  		<!-- 开启下划线命名到驼峰命名规范的转换 -->
+  		<setting name="mapUnderscoreToCamelCase" value="true"/>
+  	</settings>
+  
+  
+  </configuration>
