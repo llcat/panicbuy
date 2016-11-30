@@ -69,25 +69,25 @@ public class KillStockController {
     @ResponseBody
     public ControllerResult<KillExecutionInfo> execute(
     		          @PathVariable("stockId")Long stockId,
-    		          @CookieValue("userPhone")Long userPhone,
+    		          @CookieValue("userphone")Long userPhone,
     		           @PathVariable("md5")String md5){
 		if(userPhone == null){
-			return new ControllerResult<KillExecutionInfo>(false,"未注册");
+			return new ControllerResult<KillExecutionInfo>(true,"未注册");
 		}
 		try{
 		KillExecutionInfo execution = kss.executeKill(stockId, userPhone, md5);
 		return new ControllerResult<KillExecutionInfo>(true, execution);
 		}catch(RepeatKillException e1){
 			KillExecutionInfo execution = new KillExecutionInfo(stockId,KillInfoEnum.REREAT_KILL);
-			return new ControllerResult<KillExecutionInfo>(false, execution);
+			return new ControllerResult<KillExecutionInfo>(true, execution);
 		}
 		catch(KillClosedException e2){
 			KillExecutionInfo execution = new KillExecutionInfo(stockId,KillInfoEnum.END);
-			return new ControllerResult<KillExecutionInfo>(false, execution);
+			return new ControllerResult<KillExecutionInfo>(true, execution);
 		}
 		catch(Exception e){
 			KillExecutionInfo execution = new KillExecutionInfo(stockId,KillInfoEnum.INNER_ERROR);
-			return new ControllerResult<KillExecutionInfo>(false, execution);
+			return new ControllerResult<KillExecutionInfo>(true, execution);
 		}
 	}
 	@RequestMapping(value="/time/now",method=RequestMethod.GET,

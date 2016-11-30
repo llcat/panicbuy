@@ -61,9 +61,10 @@ var panicbuy={
 			var leftTime = new Date(startTime+1000);
 			stockBox.countdown(leftTime,function(event){
 				var fmtTime = event.strftime("秒杀倒计时：%D天 %H时 %M分 %S秒");
-				stockBox.hide().html(fmtTime).on('finish.countdown',function(){
+				stockBox.hide().html(fmtTime).show();
+				/*on('finish.countdown',function(){
 					panicbuy.executeKill(stockId,stockBox);
-				});
+				})*/
 			});
 		}else if(nowTime>endTime){
 			stockBox.hide().html('秒杀结束');

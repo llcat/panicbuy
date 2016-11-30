@@ -53,8 +53,7 @@
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script type="text/javascript" src="http://cdn.bootcss.com/jquery-countdown/2.0.2/jquery.plugin.min.js"></script>
-<script src="http://cdn.bootcss.com/jquery-countdown/2.0.2/jquery.countdown.min.js"></script> 
+<script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script> 
 <script type="text/javascript" src="/panicbuy/resources/js/panicbuy.js"></script>
 <script type="text/javascript">
 $(function(){
